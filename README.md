@@ -1,135 +1,44 @@
-# 🎬 YouTube Playlist Viewer
+# 🎬 YouTube 播放清單影片擷取工具
 
-A Django web application that extracts and displays videos from a public YouTube playlist.
-
-Users can paste a YouTube playlist URL and instantly view all videos in a clean table.
-
----
-
-## 🚀 Live Demo
-
-(Coming soon – deployed on Render)
+這是一個使用 **Django** 開發的網站工具。  
+使用者只需要貼上 **公開的 YouTube 播放清單網址**，系統就會自動擷取播放清單中的所有影片，並在網頁上以表格形式顯示影片資訊。
 
 ---
 
-## 📌 Features
+## 🚀 專案功能
 
-- Extract videos from a public YouTube playlist
-- Display video title and video URL
-- Simple and clean web interface
-- Input validation for playlist URLs
-- Session storage for playlist data
+- 輸入 YouTube 播放清單網址
+- 自動擷取播放清單中的所有影片
+- 顯示影片標題 (Title)
+- 顯示影片網址 (URL)
+- 表格化呈現影片資料
+- 基本的網址格式驗證
+- 使用 Session 暫存資料
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 技術架構
 
 - Python
 - Django
 - YouTube Data API v3
-- HTML / Bootstrap
-- Render (for deployment)
+- HTML
+- Bootstrap
+- Render（部署平台）
 
 ---
 
-## ⚙️ Installation
+## 📌 使用方式
 
-### 1. Clone the repository
+### 1️⃣ 輸入公開的播放清單網址
 
-```bash
-git clone https://github.com/Outlier365/youtube-playlist-viewer.git
-cd youtube-playlist-viewer
-```
+例如：
+https://www.youtube.com/watch?v=e-ORhEE9VVg&list=PLplXQ2cg9B_qrCVd1J_iId5SvP8Kf_BfS
 
-### 2. Create virtual environment
+### 2️⃣ 系統會擷取播放清單內容
 
-```bash
-python -m venv venv
-```
+並顯示：
 
-Activate it:
-
-Windows
-
-```bash
-venv\Scripts\activate
-```
-
-Mac/Linux
-
-```bash
-source venv/bin/activate
-```
-
----
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-### 4. Create `.env` file
-
-Create a `.env` file in the project root:
-
-```
-SECRET_KEY=your_secret_key
-YOUTUBE_API_KEY=your_youtube_api_key
-DEBUG=True
-ALLOWED_HOSTS=127.0.0.1,localhost
-```
-
----
-
-### 5. Run migrations
-
-```bash
-python manage.py migrate
-```
-
----
-
-### 6. Run the server
-
-```bash
-python manage.py runserver
-```
-
-Open:
-
-```
-http://127.0.0.1:8000
-```
-
----
-
-## 📷 Example
-
-Paste a YouTube playlist URL like:
-
-```
-https://www.youtube.com/playlist?list=XXXX
-```
-
-The application will display:
-
-- Video title
-- Video URL
-
----
-
-## 📚 Future Improvements
-
-- Export playlist to CSV
-- Search and filter videos
-- Import videos into user's playlist via OAuth
-- Playlist statistics
-
----
-
-## 👨‍💻 Author
-
-Jerry Shen
+| 影片標題 | 影片網址 |
+|--------|--------|
+| Video Title | https://youtube.com/watch?v=xxx |
