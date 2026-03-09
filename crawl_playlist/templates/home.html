@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Playlist Tool</title>
+</head>
+<body>
+    <h1>YouTube Playlist Tool</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <p>請貼上 YouTube 播放清單網址：</p>
+        {{ form.playlist_url }}
+
+        {% if form.playlist_url.errors %}
+            <div style="color: red;">
+                {{ form.playlist_url.errors }}
+            </div>
+        {% endif %}
+
+        <button type="submit">送出</button>
+    </form>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <hr>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>url</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for video in videos %}
+            <tr>
+                <td>{{ video.title }}</td>
+                <td>
+                    <a href="{{ video.url }}" target="_blank">{{ video.url }}</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2">目前沒有資料</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
